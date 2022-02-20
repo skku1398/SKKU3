@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>WEB1-HTML</title>
+<meta charset="utf-8">
+<script>
+function nightDayHandler(self){
+  var target=document.querySelector('body');
+  if(self.value==='night'){
+  target.style.backgroundColor='black';
+  target.style.color='white';
+  self.value='day';
+
+  var alist=document.querySelectorAll('a');
+  var i=0;
+  while(i<alist.length){
+    alist[i].style.color='powderblue';
+    i=i+1;}
+
+  }else{
+  target.style.backgroundColor='white';
+  target.style.color='black';
+  self.value='night';
+
+  var alist=document.querySelectorAll('a');
+  var i=0;
+  while(i<alist.length){
+    alist[i].style.color='blue';
+    i=i+1;}
+  }
+}
+</script>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+  <h1><a href="index.html">SKKU</a></h1>
+
+
+  <div id="grid">
+<ol>
+
+  <input  type="button" value="night" onclick="nightDayHandler(this);"
+  >
+
+  <li><a href="1.html">교시</a></li>
+  <li><a href="2.html">건학이념</a></li>
+  <li><a href="3.html">교가(인기없음)</a></li>
+</ol>
+
+<div id="article">
+<h2>성균관대 교가(사실 아무도 있는지 모른다.)</h2>
+
+<p>
+
+  1절
+  온누리 가장 오랜 배움의 마을 육백년 쌓고 쌓인 드높은 학통 일사나 어지러랴 우리의 지킴 일보나 물러서랴 우리의 정진
+  <br>
+  2절
+  재지도 재지려니 도의 앞세고 양지의 횃불들어 어둠 헤치며 성훈의 지로따라 나아들가세 꾸준히 쉬임없이 나아들가세
+  <br>
+  3절
+  정의의 대도 걷다 쓰러지어도 불순한 온갖 명리 뒤로 세우고 낮과 밤 두렴없이 나아들감은 우리의 이상이요 정신이로다
+  <br>
+  후렴
+  배움만이 보배아닌 성균관대학 인의예지 그 자랑인 우리 대학교
+  <br>
+</p></div>
+</div>
+
+<input type="button" value="night" onclick="nightDayHandler(this)">
+
+</body>
+</html>

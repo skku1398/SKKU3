@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>WEB1-HTML</title>
+<!--이렇게 하면 한글 쓸 수 있음-->
+<!--html주석은 이렇게 쓰고 밑에서부턴 자바스크립트 주석 //써야 함-->
+<meta charset="utf-8">
+<script>
+
+//body객체, body태그의 글자 색 바꾸는 메소드, body태그의 배경색 바꾸는 메소
+//두 메소드 모두 color라는 인자를 받음-->
+//document객체에서 quertSelector라는 메소드를 가져옴, 그리고 안에 인수로 body를 넣음
+//그러면 javascript에서 html tag를 선택할 수 있음
+var Body={
+  setColor: function(color){
+    document.querySelector('body').style.color=color;
+  },
+
+  setBackgroundColor: function(color){
+    document.querySelector('body').style.backgroundColor=color;
+  }
+}
+
+//Links객체, 링크태그 안 내용  색깔 바꾸는 메소드
+var Links={
+  setColor:function(color){
+    var alist=document.querySelectorAll('a');
+//alist안에는 quertselectorall(a)의 내용이 리스트 배열 형태로 저장되어있음-
+    var i=0;
+    while(i<alist.length){
+      alist[i].style.color=color;
+      //alist내의 글자 색깔을 color인자에 따라 바꿈
+    i=i+1;
+  }
+  }
+}
+//nightdayhandler라는 두 함수를 모두 활용한 함수
+//self를 통해 특정 버튼에서만 가동하게 함
+//즉 self매개변수를 통해 this인자를 받음
+//this는 이 이벤트가 소속된 태그를 가리키도록 약속됨
+function nightDayHandler(self){
+  if(self.value==='night'){
+  Body.setBackgroundColor('black');
+  Body.setColor('white');
+  Links.setColor('powderblue');
+  self.value='day';
+
+  }else{
+  Body.setBackgroundColor('white');
+  Body.setColor('black');
+  Links.setColor('blue');
+  self.value='night';
+  }
+}
+</script>
+
+<!--style.css를 가져올 수 있는 역할-->
+<link rel="stylesheet" href="style.css"/>
+</head>
+
+
+<body>
+
+  <h1><a href="index.html">SKKU</a></h1>
+
+  <!--큰 A묶음  -->
+  <div id="grid">
+<ol>
+
+  <input  type="button" value="night" onclick="nightDayHandler(this);"
+  >
+
+  <li><a href="1.html">교시</a></li>
+  <li><a href="2.html">건학이념</a></li>
+  <li><a href="3.html">교가(인기없음)</a></li>
+</ol>
+
+<div id="article">
+<h2>성균관대 교시</h2>
+
+<p>
+  성균관대학교의 교시인 仁義禮智는 유교의 근본정신을 말해 주고 있는 기본개념이며,
+  인간이 본래적으로 가지는 마음과 행동과 옳음과 슬기의 본질을 나타내 주고 있는 4가지 덕목이다.
+  이것은 모두 인간의 마음은 착하다는 性善的 본질을 말해 주고 있는 것으로 교육은 결국 이 성선적 마음의 본질을 열고 싹트게 하는 것이라고 할 수 있다.
+  仁은 사랑이다. 마음의 바탕이요, 본질이다. 인간은 이 본질이 있음으로 해서 모든 가치를 추구 형성해 나갈 수가 있는 것이다.
+  義는 옳음이다. 모든 생각과 행동의 기준이요, 표준이다.
+  또 마땅함의 의미를 가지고 있는 것으로 인륜 도덕의 당위성을 부여하는 인간의 사명적 소재를 분명히 해주고 있는 덕목이라고 할 수 있다.
+  禮는 실천이다. 사랑을 실천하고 옳음을 실천하고 윤리도덕의 인간질서를 생활로서 실천하는 실천력이다.
+  그러므로 禮는 가장 인간적인 삶의 구체적 표현이요, 양상이라고 할 수 있다. 인간의 모든 가치덕목은 바로 禮의 실천을 통해 실제화되는 것이라 할 수 있다.
+  智는 슬기이다. 옳고 그름을 판별할 줄 아는 슬기, 곧 지적 능력을 말한다.
+  진리탐구도 이 지적능력을 기반으로 하여 가능한 것이요, 올바른 가치관의 통찰력도 이 지적능력이 있음으로 가능한 것이다.
+  그러므로 교육은 곧 이 지적 능력의 계발로 올바른 생활을 할 수 있는 인간의 길을 열어줌에 있다고 하겠다.
+</p></div>
+</div>
+
+<input type="button" value="night" onclick="nightDayHandler(this)">
+
+</body>
+</html>
